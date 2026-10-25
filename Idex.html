@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For AKOSUA ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ffe4e1);
+    overflow: hidden;
+    padding: 15px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    padding: 35px 22px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.93);
+    border: 3px solid #ff69b4;
+    border-radius: 25px;
+    box-shadow: 0 0 35px rgba(255, 20, 147, 0.4);
+    z-index: 2;
+    animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.heart {
+    color: #ff1493;
+    font-size: 45px;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.2); }
+}
+
+h1 {
+    color: #e60073;
+    font-size: 34px;
+    margin: 12px 0;
+}
+
+.subtitle {
+    color: #c2185b;
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.message {
+    color: #633047;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+.question {
+    font-size: 22px;
+    color: #e60073;
+    font-weight: bold;
+    margin: 22px 0;
+}
+
+button {
+    padding: 13px 22px;
+    margin: 7px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.yes {
+    color: white;
+    background: linear-gradient(45deg, #ff1493, #ff69b4);
+    box-shadow: 0 4px 12px #ffb6c1;
+}
+
+.yes:hover {
+    transform: scale(1.1);
+}
+
+.wait {
+    color: #e60073;
+    background: #ffe4ec;
+}
+
+#answer {
+    color: #e60073;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+.footer {
+    margin-top: 25px;
+    color: #b03060;
+    font-size: 14px;
+}
+
+.floating {
+    position: absolute;
+    bottom: -40px;
+    font-size: 25px;
+    animation: floatUp linear infinite;
+    opacity: 0.8;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0) rotate(0); opacity: 0.8; }
+    to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="heart">❤️</div>
+
+    <h1>My Dear AKOSUA</h1>
+
+    <p class="subtitle">AKOSUA You make my world more beautiful 🌹</p>
+
+    <div class="message">
+        From the moment you became special to me,
+        my heart began to dream of beautiful moments
+        with you. Your smile brings me happiness,
+        and the thought of having you in my life
+        makes my heart smile. 💕
+        <br><br>
+        I cannot promise you a perfect life,
+        but I promise to care for you, respect you,
+        support you, and do my best to make you smile.
+        I want to create beautiful memories with you
+        and see where our love can take us. 🥹❤️
+    </div>
+
+    <div class="question">
+        Ella, will you be mine? 💍
+    </div>
+
+    <button class="yes" onclick="sayYes()">
+        YES! ❤️
+    </button>
+
+    <button class="wait" onclick="sayWait()">
+        I need a moment 🥹
+    </button>
+
+    <div id="answer"></div>
+
+    <div class="footer">
+        Made with ❤️ just for AKOSUA<br>
+        You are truly special to me. 🌹
+    </div>
+</div>
+
+<script>
+function sayYes() {
+    document.getElementById("answer").innerHTML =
+        "😭❤️ You just made me the happiest person! " +
+        "AKOSUA, here's to a beautiful journey together! 💍🥰";
+
+    for (let i = 0; i < 35; i++) {
+        createHeart();
+    }
+}
+
+function sayWait() {
+    document.getElementById("answer").innerHTML =
+        "Take your time, AKOSUA ❤️🥹 " +
+        "Your happiness and your feelings matter to me. 🌹";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.innerHTML = ["❤️", "💕", "💖", "🌹"][Math.floor(Math.random() * 4)];
+    heart.className = "floating";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+    heart.style.fontSize = (20 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 7000);
+}
+
+// Create floating hearts continuously
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
